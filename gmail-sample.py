@@ -59,6 +59,11 @@ def main():
     # "me" is allowed and will bring the user which is authorized by the token.
     # Otherwise you can type in "email@gmail.com" or similar.
     response = service.users().messages().list(userId="me", labelIds=label_ids).execute()
+    
+    # If you want to get Threads, not emails then:
+    # response = service.users().threads().list(userId="me", labelIds=label_ids).execute()
+    # And change commands accordingly in the response['messages'] vs. response['threads']
+    
     messages = []
     if 'messages' in response:
         messages.extend(response['messages'])
