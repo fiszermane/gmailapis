@@ -52,6 +52,7 @@ def main():
 
     
     # This calls the Gmail API and will find my "Label_286"
+    # Needs to be in the form of a list.
     label_ids = ["Label_286"]
     
     # Note I am using "Messages" and not "Threads".
